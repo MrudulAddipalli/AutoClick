@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity{
 
     int error=0;
     int clicked=0;
-    private Object MainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +50,6 @@ public class MainActivity extends AppCompatActivity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
-        //Toast.makeText(MainActivity.this, "Running...", Toast.LENGTH_LONG).show();
-
 
         //for background
         Intent i = new Intent();
@@ -89,7 +85,7 @@ public class MainActivity extends AppCompatActivity{
         webSettings.setEnableSmoothTransition(true);
         try
         {
-            link= new URL("http://bept.herokuapp.com/login");
+            link= new URL("http://XYZ/login");
             mwebView.loadUrl(String.valueOf(link));
         }
         catch (MalformedURLException e)
@@ -143,7 +139,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onPageFinished(WebView view, String url)
             {
-                if( mwebView.getUrl().equals("https://bept.herokuapp.com/login") || mwebView.getUrl().equals("http://bept.herokuapp.com/login"))
+                if( mwebView.getUrl().equals("https://XYZ/login") || mwebView.getUrl().equals("http://XYZ/login"))
                 {
                     error++;
 
@@ -153,9 +149,8 @@ public class MainActivity extends AppCompatActivity{
                                 (
 
                                         "javascript:(function() { " +
-                                                "document.getElementById('email').value='mruduladdipalli@gmail.com';"+
-                                                "document.getElementById('password').value='Ab123123';"+
-                                                //"document.getElementById('submitbtn').click();"+
+                                                "document.getElementById('email').value='XXXXXXXXXXXXXXXXXXXX@XXXXX.com';"+
+                                                "document.getElementById('password').value='XXXXXXXXXXXXXX';"+
                                                 "document.getElementById('loginform').submit();"+
                                                 "})()"
 
@@ -177,18 +172,7 @@ public class MainActivity extends AppCompatActivity{
 
                 }
 
-                if(mwebView.getUrl().equals("http://bept.herokuapp.com/logout"))
-                {
-                    Toast.makeText(getApplicationContext(), "Logging Out Please Wait...", Toast.LENGTH_SHORT).show();
-                    recreate();
-                    //or
-
-                    mwebView.clearCache(true);
-                    finish();
-                }
-
-
-                if(mwebView.getUrl().equals("http://bept.herokuapp.com/home"))
+                if(mwebView.getUrl().equals("http://XYZ/home"))
                 {
 
                     //button clicked javascript here
